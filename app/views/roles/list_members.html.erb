@@ -1,0 +1,32 @@
+<%= title [l(:label_role_plural), roles_path], @role.name, l(:label_member_plural) %>
+
+<% if @projects_members.empty? %>
+
+<p><%= l(:notice_file_not_found) %></p>
+
+<% else %>
+
+<% @projects_members.each do |project, members| next if members.count == 0 %>
+
+<h3><%= project.name %></h3>
+<div class="box tabular" id="members_list">
+	<div class="splitcontent">
+		<ul>
+			<% members.each do |member| next if member.nil? or member.user.nil? %>
+				<li><%= link_to_user(member.user) %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+<% end %>
+
+<style>
+#members_list ul {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+	list-style-position: inside;
+}
+</style>
+
+<% end %>
