@@ -1,4 +1,3 @@
-# coding: utf-8
 #
 #    Copyright (C) 2014 Savoir-faire Linux Inc. (<www.savoirfairelinux.com>).
 #
@@ -15,18 +14,16 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#
 require 'redmine'
-
 require 'roles_controller_patch'
 
-Redmine::Plugin.register :sfl_list_of_roles_members do
+Redmine::Plugin.register :redmine_list_of_roles_members do
 
-    name 'SFL List of Roles Members'
-    author 'David Côté-Tremblay'
+    name 'Redmine List of Roles Members'
+    author 'Savoir-faire Linux'
     description 'Show a list of all the members of a role grouped by project.'
-    version '0.0.1'
-    url 'https://gitlab.savoirfairelinux.com/redmine/SFL-List-of-Roles-Members'
-    author_url 'http://savoirfairelinux.com'
+    version '0.1.0'
+    url 'https://github.com/savoirfairelinux/redmine-list-of-roles-members'
+    author_url 'https://www.savoirfairelinux.com'
 
 end
