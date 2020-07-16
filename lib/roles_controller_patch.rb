@@ -26,7 +26,7 @@ module RolesControllerPatch
 
 		def list_members
 			@role = Role.find(params[:id])
-			@projects_members = Member.joins(:roles, :user).where(:roles => {:id => @role}).group(:users, :id).group_by(&:project)
+			@projects_members = Member.joins(:roles, :user).where(:roles => {:id => @role}).group(:id).group_by(&:project)
 		end
 
 	end
