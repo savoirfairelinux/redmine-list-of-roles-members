@@ -18,9 +18,6 @@
 	<td class="name"><%= content_tag(role.builtin? ? 'em' : 'span', link_to(role.name, edit_role_path(role))) %></td>
 	<td><%= role.members.count %></td>
 	<td class="reorder">
-	<% unless role.builtin? %>
-		<%= reorder_links('role', {:action => 'update', :id => role, :page => params[:page]}, :put) %>
-	<% end %>
 	</td>
 	<td class="buttons">
 		<%= link_to l(:label_member_plural), {:controller => 'roles', :action => 'list_members', :id => role.id}, :class => 'icon icon-user' unless role.members.count == 0 %>
@@ -31,7 +28,5 @@
 <% end %>
 	</tbody>
 </table>
-
-<span class="pagination"><%= pagination_links_full @role_pages %></span>
 
 <% html_title(l(:label_role_plural)) -%>
